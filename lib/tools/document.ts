@@ -44,6 +44,7 @@ function xmlToText(xml: string): { title: string; text: string } {
   const title = titleMatch ? decodeEntities(titleMatch[1].replace(/<[^>]+>/g, "")).trim() : "";
 
   let s = xml
+    .replace(/[\r\n\t]+/g, " ")
     .replace(/<\?xml[\s\S]*?\?>/g, "")
     .replace(/<!--[\s\S]*?-->/g, "")
     .replace(/<(IMAGE|IMG|LIBRARY)[^>]*>[\s\S]*?<\/\1>/gi, "[이미지]")
