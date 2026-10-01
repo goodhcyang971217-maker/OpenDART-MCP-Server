@@ -75,7 +75,7 @@ function xmlToText(xml: string): { title: string; text: string } {
     .replace(/<(STYLE|SCRIPT)[^>]*>[\s\S]*?<\/\1>/gi, "")
     .replace(/<\?xml[\s\S]*?\?>/g, "")
     .replace(/<!--[\s\S]*?-->/g, "")
-    .replace(/<(IMAGE|LIBRARY)[^>]*>[\s\S]*?<\/\1>/gi, (b) => imageMarker(b))
+    .replace(/<(IMAGE)[^>]*>[\s\S]*?<\/\1>/gi, (b) => imageMarker(b))
     .replace(/<IMG[^>]*>[\s\S]*?<\/IMG>/gi, (b) => imageMarker(b))
     .replace(/<IMG[^>]*\/?>/gi, (b) => imageMarker(b))
     // 표: 행은 줄바꿈, 칸은 " | "
